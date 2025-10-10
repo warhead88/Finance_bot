@@ -7,8 +7,8 @@ class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
-    earned = Column(Integer)
-    spend = Column(Integer)
+    earned = Column(Integer, default=0)
+    spent = Column(Integer, default=0)
 
 class Operation(Base):
     __tablename__ = "operations"
