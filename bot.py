@@ -5,7 +5,7 @@ from aiogram import Bot, Dispatcher
 
 from config import Config
 from db.db import init_db
-from handlers import start
+from handlers import start, earn
 
 logging.basicConfig(
     level=logging.INFO,
@@ -17,6 +17,7 @@ async def main():
     dp = Dispatcher()
     
     dp.include_router(start.router)
+    dp.include_router(earn.router)
 
     await init_db()
     
