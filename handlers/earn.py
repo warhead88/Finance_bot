@@ -28,7 +28,7 @@ async def add(message: types.message):
 
         user.earned = user.earned + amount
 
-        operation = Operation(user_id = user_id, amount = count, type = "add")
+        operation = Operation(user_id = user_id, amount = amount, type = "add")
         session.add(operation)
 
         await message.answer(f"Вы успешно зачислили {amount} рублей на счёт.")
