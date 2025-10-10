@@ -31,4 +31,4 @@ async def add(message: types.message):
         operation = Operation(user_id = user_id, amount = count, type = "add")
         session.add(operation)
 
-        await message.answer(f"Вы успешно зачислили {count} рублей на счёт.")
+        await message.answer(f"Вы успешно зачислили {amount} рублей на счёт.")
