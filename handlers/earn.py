@@ -11,8 +11,8 @@ router = Router()
 @router.message(Command("earn"))
 async def add(message: types.message):
     try:
-        count = int(message.text.split()[1])
-        if count <= 0:
+        amount = int(message.text.split()[1])
+        if amount <= 0:
             raise
     except:
         await message.answer("Введёно неверное количество денег.")
@@ -26,7 +26,7 @@ async def add(message: types.message):
         )
         user = result.scalar_one_or_none()
 
-        user.earned = user.earned + count
+        user.earned = user.earned + amount
 
         operation = Operation(user_id = user_id, amount = count, type = "add")
         session.add(operation)
